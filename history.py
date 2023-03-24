@@ -33,3 +33,20 @@ statistics.version
 pip list
 pip freeze
 git init
+python -m pip install --upgrade pip
+
+## ---(Fri Mar 24 11:49:19 2023)---
+runfile('C:/Users/galvj/.spyder-py3/descriptivestats.py', wdir='C:/Users/galvj/.spyder-py3')
+
+## ---(Fri Mar 24 12:03:01 2023)---
+runfile('C:/Users/galvj/.spyder-py3/descriptivestats.py', wdir='C:/Users/galvj/.spyder-py3')
+install streamlit
+runfile('C:/Users/galvj/.spyder-py3/descriptivestats.py', wdir='C:/Users/galvj/.spyder-py3')
+install streamlit
+runfile('C:/Users/galvj/.spyder-py3/descriptivestats.py', wdir='C:/Users/galvj/.spyder-py3')
+runfile('C:/Users/galvj/.spyder-py3/descriptivestats.py', wdir='C:/Users/galvj/.spyder-py3')
+pip install streamlit
+runfile('C:/Users/galvj/.spyder-py3/descriptivestats.py', wdir='C:/Users/galvj/.spyder-py3')
+pipreqs list
+PIL._version_
+pip freeze

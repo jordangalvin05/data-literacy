@@ -20,7 +20,7 @@ check_updates_on_startup = True
 cursor/width = 2
 report_error/remember_token = False
 show_dpi_message = True
-version = 73.0.0
+version = 70.2.0
 previous_crash = 
 
 [toolbar]
@@ -50,9 +50,11 @@ message = Spyder Internal Console
 	This console is used to report application
 	internal errors and to inspect Spyder
 	internals with the following commands:
-	spy.app, spy.window, dir(spy)
+	  spy.app, spy.window, dir(spy)
 	
 	Please don't use it to run your code
+	
+	
 multithreaded = False
 profile = False
 commands = []
@@ -106,7 +108,7 @@ check_all = False
 dataframe_format = .6g
 excluded_names = ['nan', 'inf', 'infty', 'little_endian', 'colorbar_doc', 'typecodes', '__builtins__', '__main__', '__doc__', 'NaN', 'Inf', 'Infinity', 'sctypes', 'rcParams', 'rcParamsDefault', 'sctypeNA', 'typeNA', 'False_', 'True_']
 exclude_private = True
-exclude_uppercase = False
+exclude_uppercase = True
 exclude_capitalized = False
 exclude_unsupported = False
 exclude_callables_and_modules = True
@@ -155,7 +157,8 @@ convert_eol_on_save_to = LF
 tab_always_indent = False
 intelligent_backspace = True
 automatic_completions = True
-automatic_completions_after_chars = 1
+automatic_completions_after_chars = 3
+automatic_completions_after_ms = 300
 completions_hint = True
 completions_hint_after_ms = 500
 underline_errors = False
@@ -264,6 +267,7 @@ undocked_on_window_close = False
 
 [completions]
 enable = True
+kite_call_to_action = True
 enable_code_snippets = True
 completions_wait_for_ms = 200
 enabled_providers = {}
@@ -284,11 +288,11 @@ first_time = False
 undocked_on_window_close = False
 
 [workingdir]
+working_dir_adjusttocontents = False
 working_dir_history = 20
 console/use_project_or_home_directory = False
 console/use_cwd = True
 console/use_fixed_directory = False
-startup/use_project_or_home_directory = True
 startup/use_fixed_directory = False
 history = ['C:\\Users\\galvj\\.spyder-py3', 'C:\\Users\\galvj']
 init_workdir = None
@@ -381,8 +385,6 @@ editor/inspect current object = Ctrl+I
 editor/breakpoint = F12
 editor/conditional breakpoint = Shift+F12
 editor/run selection = F9
-editor/run to line = Shift+F9
-editor/run from line = Ctrl+F9
 editor/go to line = Ctrl+L
 editor/go to previous file = Ctrl+Shift+Tab
 editor/go to next file = Ctrl+Tab
@@ -457,7 +459,7 @@ profiler/profile_current_filename_action =
 shortcuts/show_shortcut_summary_action = 
 
 [appearance]
-css_path = C:\Users\galvj\AppData\Local\anaconda3\lib\site-packages\spyder\plugins\help\utils\static\dark_css
+css_path = C:\Users\galvj\Anaconda3\lib\site-packages\spyder\plugins\help\utils\static\dark_css
 icon_theme = spyder 3
 font/family = ['Monospace', 'DejaVu Sans Mono', 'Consolas', 'Bitstream Vera Sans Mono', 'Andale Mono', 'Liberation Mono', 'Courier New', 'Courier', 'monospace', 'Fixed', 'Terminal']
 font/size = 10
