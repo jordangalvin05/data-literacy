@@ -9,21 +9,21 @@ import statistics
 from PIL import Image
 
 
-st.title('Descriptive Stats Explorer Log :tent:')
-st.header('_Mean, Median & Mode_')
+st.title('Statistical Storytelling 📖')
+st.header('_Mean, Median or Mode: Which average is best?_')
 st.caption('10 minute read. For questions contact Jordan @ DataGovernance@perkinscoie.com')
 st.subheader('A :blue[Simple] Example	:angel:')
 
-st.text('Let\'''s say your supervisor wants to know how long it takes you to write motion \nso she can plan monthly work allocation. Of course you think, "It depends! Maybe I \nwill just give an average."\n\n'
+st.text('Let\'''s say your supervising lawyer wants to know how long it takes you to write \nmotions so she can plan monthly work allocation. Of course you think, "It depends! \nMaybe I will just give an average."\n\n'
         '⚠️ Hang on. There are 3 interpretations of the word "average." \nDepending on how you answer, you may find yourself with a lot less time to write \nyour next motion than you actually need.\n\n'
         'So, which do you choose 😕?''\n\n'
         'Suppose you kept track of how many hours you spent drafting each of your \nlast 10 motions.\n\n'
         'Your last 10 motions took you 4, 8, 6, 5, 3, 2, 8, 9, 2, and 5 hours, respectively.\n\n'
-        'Notice 👀 there is quite a bit of variability here.\nThis may indicate a true average isn\'''t what we want. Let\'''s try.')
+        'Notice 👀 there is quite a bit of variability here.\nThis may indicate a "true average" isn\'''t what we want. Let\'''s try.')
 
 st.subheader(':red[_Mean_]')
 st.text('The "Mean" of a dataset is what we typically equate with it\'''s "average."\n'
-        'Mathematically, we find the Mean by adding the values of all the observations\n(in this case, our number of hours), and we divide that by the number of\nobservations (in this case, 10).')
+        'Mathematically, we find the mean by adding the values of all the observations\n(in this case, our number of hours), and we divide that by the number of\nobservations (in this case, 10).')
 
 data = [4, 8, 6, 5, 3, 2, 8, 9, 2, 5]
 
@@ -46,9 +46,9 @@ with col1:
            st.text("")
            st.text('When would we use a mean? The answer is \nrooted in probability. When we ask for an \n"average", what we usually want is the \nmost frequent result. In other words, if \nI were writing a motion, how long 🕓 will \nit most likely take me?')
            st.text('👈 Look at the graph. Would you be \nwilling to say that a motion will most \nlikely take you 5.2 hours to finish?')
-           st.text('Probably not 🙅‍♀️. It looks just as likely \nthat it will take us 2 hours or 8 hours.')
+           st.text('Probably not 🙅‍♀️. It looks just as likely \nthat it will take 2 hours or 8 hours.')
        st.text('But what if our observations were less \nvaried, and our graph looked more like a \nbell curve 🔔?')
-       st.text('Here, a mean might be just what we want. \nWhy 🤔? Well, in this case 👉, drafting \na motion took us 5 hours 5 out of 10 times. \nWe only saw other results 1 or 2 times. \nSo, let me ask again: looking at the \nsecond graph, would you be willing to say \nthat a motion will most likely take you \n5.5 hours to finish?')
+       st.text('Here, a mean might be just what we want. \nWhy 🤔? Well, in this case 👉, drafting \na motion took us 5 hours 5 out of 10\ntimes. We only saw other results 1 or 2\ntimes. So, let me ask again: looking at\nthe second graph, would you be willing to\nsay that a motion will most likely take\nyou 5.5 hours to finish?')
        with col2:
            st.text("")
            st.text("")
@@ -107,7 +107,7 @@ with col5:
         st.write("Mode(s):",str(modes))
         st.text("🤯 Now we see why median and mode weren't\nso helpful: our dataset is multimodal!\nIt has 3 modes.")
         st.text("With the information we have now, \n"
-                "It is equally likely that it will take \n"
+                "it is equally likely that it will take \n"
                 "us either 2, 5, or 8 hours to draft a \n"
                 "motion. I doubt this answer will satisfy \n"
                 "our supervisor 😕.")
@@ -136,7 +136,31 @@ with col5:
 #hist_values = pd.DataFrame((4, 8, 6, 5, 3, 2, 8, 9, 2, 5))
 #st.bar_chart(hist_values)
 
-st.subheader(':red[_We Made it_] 💥')
+st.subheader(':red[_Apply It_] ✍️')
+st.text("1. Which statement, if true, would make the mean an acceptable statistic in this\nscenario?")
+if st.checkbox("You've started delegating the motions that took you 2 hours to write to\na junior associate."):
+    st.write("Probably not. The results would still be bimodal (i.e., there are two modes). If you did use the mean in this situation, you should also include an explanation that the overall mean is 6, but this generalization may obscure a reality depicted by the bimodal pattern.")
+if st.checkbox("Your supervising lawyer mentions that she wants to know long it takes 'overall' to write motions because she wants to know if we're spending more hours writing motions this year than we were over the last 5 years."):
+    st.write("I agree. In this case, we can probably assume that, year to year, we have similar variability in how long it takes us to write different kinds of motions. Therefore, if we find that the means are steady for the first 3 years, then sharply decline in year 4, this might indicate something happened that caused us to spend less time overall writing motions.")
+st.text("2. Which dataset, depicted by the charts below, would you summarize using the\nmedian?")
+col7,col8,col9 = st.columns(3)
+
+with col7:
+    norm_img = Image.open('Normal-distribution-of-SAT-scores.png')
+    st.image(norm_img, caption="a")
+    if st.checkbox("a"):
+        st.write("Try again.")
+with col8:
+    skew_img = Image.open('Average-Income-Distribution.png')
+    st.image(skew_img, caption="b")
+    if st.checkbox("b"):
+        st.write("Yep!")
+with col9:
+    bimo_img = Image.open('bimodal3.png')
+    st.image(bimo_img, caption="c")
+    if st.checkbox("c"):
+        st.write("Try again.")
+st.subheader(':red[_We Made It_] 💥')
 st.text('A sincere thanks to those who took this journey with me. I hope this was a fun \n'
         'and simple introduction to some basic stats. I hope it encourages you to ask \n'
         'questions about data you previously would not have thought to. And if you ever \n'
