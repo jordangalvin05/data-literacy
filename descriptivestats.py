@@ -7,6 +7,9 @@ Created on Wed Mar 22 16:29:09 2023
 import streamlit as st
 import statistics
 from PIL import Image
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 
 
 st.title('Statistical Storytelling 📖')
